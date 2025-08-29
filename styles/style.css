@@ -1,0 +1,229 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+
+    /* --- Navbar --- */
+    nav {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: #fff;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff9800;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+        /* --- Sections --- */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0; /* Hidden initially */
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out; 
+    }
+    
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+     h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #222;
+    }
+
+     /* --- Hero Section --- */
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  /* url('https://picsum.photos/1600/900') center/cover no-repeat; */
+                  url('images/Hero-bg.jpg');
+      color: #fff;
+      text-align: center;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+    }
+
+     #home .typing {
+      border-right: 2px solid #ff9800;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      /* animation: typing 4s steps(30, end) forwards, blink 0.75s infinite; */
+      animation: typing 4s steps(30, end) forwards, hideCaret 0s forwards 4s;
+    }
+
+     @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* Hide the caret after typing finishes */
+    @keyframes hideCaret {
+    to { border-right: none; }
+    }
+    /* @keyframes blink {
+      50% { border-color: transparent; }
+    } */
+    #home p {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    #home button {
+      background: #ff9800;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+     #home button:hover {
+      background: #e68900;
+      transform: scale(1.1);
+    }
+
+      /* --- About --- */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+    #about img {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+     /* --- Skills --- */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .skill {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skill:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+
+    /* --- Projects --- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Contact --- */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #444;
+      transform: scale(1.05);
+    }
+
+      /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
